@@ -1,0 +1,43 @@
+.mainHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .searchBlock{
+    border: 1px solid #F3F3F3;
+    border-radius: 10px;
+    padding: 13px;
+    display: flex;
+  }
+  .searchInput{
+    padding: 0 10px 0 11px;
+  
+    &::placeholder{
+      font-size: 16px;
+      color: #C4C4C4;
+    }
+    font-size: 16px;
+    color: #3d3c3c;
+  }
+  
+  .mainTitle{
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    color: #000000;
+    
+  }
+  
+  .itemsBox{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    grid-template-rows: repeat(auto-fit, 1fr);
+    // justify-content: space-around;
+    column-gap: 25px;
+    row-gap: 20px;
+    justify-content: center;
+    // display: flex;
+    
+  }

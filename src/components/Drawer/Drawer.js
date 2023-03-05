@@ -1,7 +1,9 @@
+import s from "./Drawer.module.scss";
+
 function Drawer() {
   return (
-    <div className="overplay">
-      <div className="drawer">
+    <div className={s.overplay}>
+      <div className={s.drawer}>
         <div className="drawer-header">
           <h2>Корзина</h2>
           <img

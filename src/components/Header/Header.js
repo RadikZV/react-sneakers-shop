@@ -1,18 +1,20 @@
+import s from './Header.module.scss';
+
 function Header() {
   return (
-    <header className="header">
-      <div className="header-container container">
-        <div className="header-left">
+    <header className={s.header}>
+      <div className={`${s.headerContainer} ${s.container}`}>
+        <div className={s.headerLeft}>
           <a href="#">
             <img src="./img/logo.svg" alt="logo" />
           </a>
           <div>
-            <h3 className="header-company-name">React Sneakers</h3>
-            <p className="header-company-subcription">Sneakers shop</p>
+            <a href="#" className={s.headerCompanyName}>React Sneakers</a>
+            <p className={s.headerCompanySubcription}>Sneakers shop</p>
           </div>
         </div>
-        <div className="header-right">
-          <ul className="header-right-menu">
+        <div className={s.headerRight}>
+          <ul className={s.headerRightMenu}>
             <li>
               <img src="./img/icons/cart.svg" alt="cart" />
               <span>999грн</span>

@@ -1,23 +1,25 @@
-function ProductCard() {
+import s from "./ProductCard.module.scss";
+
+function ProductCard(props) {
   return (
-    <div className="items-box-item item">
-      <div className="addToFavoutites-btn">
+    <div className={s.cardItem}>
+      <div className={s.addToFavoutitesBtn}>
         <img src="/img/icons/unliked.png" alt="unliked" />
       </div>
-      <div className="item-image-box">
-        <a href="#" className="item-image-link">
-          <img src="./img/sneakers/1.jpg" alt="sneakers" />
+      <div className={s.itemImageBox}>
+        <a href="#" className={s.itemImageLink}>
+          <img src={props.photoUrl} alt="sneakers" />
         </a>
       </div>
-      <a href="#" className="item-title">
-        Чоловічі кросівки Nike Blazer Mid Suede
+      <a href="#" className={s.itemTitle}>
+        {props.title}
       </a>
-      <div className="item-price-info">
-        <div className="item-price-box">
-          <p className="item-price-title">Ціна:</p>
-          <p className="item-price">7 999 грн</p>
+      <div className={s.itemPriceInfo}>
+        <div className={s.itemPriceBox}>
+          <p className={s.itemPriceTitle}>Ціна:</p>
+          <p className={s.itemPrice}>{props.price} грн</p>
         </div>
-        <div className="item-add-button">
+        <div className={s.itemAddButton}>
           <img src="/img/icons/add-to-cart.svg" alt="Plus" />
         </div>
       </div>

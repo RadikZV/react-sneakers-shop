@@ -5,8 +5,8 @@ function Main() {
   return (
     <main className="main">
       <div className="main-container container">
-        <Slider/>
-        <ProductsPage/>
+        <Slider />
+        <ProductsPage />
       </div>
     </main>
   );
