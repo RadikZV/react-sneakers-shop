@@ -1,6 +1,9 @@
 import s from "./Drawer.module.scss";
 
-function Drawer() {
+function Drawer({ onCloseCart, cartItems = [], deleteItem}) {
+
+  
+  console.log(cartItems);
   return (
     <div className={s.overplay}>
       <div className={s.drawer}>
@@ -10,47 +13,32 @@ function Drawer() {
             className="remove-item-btn"
             src="./img/icons/remove-btn.svg"
             alt="removeIcon"
+            onClick={onCloseCart}
           />
         </div>
         <div className="cart-items">
-          <div className="cart-item">
-            <div
-              className="cart-item-product-img"
-              style={{ backgroundImage: "url('img/sneakers/1.jpg')" }}
-            >
-              {/* <img src="" width={70} height={70} alt="product" /> */}
-            </div>
-            <div className="cart-item-description">
-              <a href="#" className="cart-item-name">
-                Чоловічі кросівки Nike Blazer Mid Suede
-              </a>
-              <p className="cart-item-price">7 999 грн</p>
-            </div>
-            <img
-              className="remove-item-btn"
-              src="./img/icons/remove-btn.svg"
-              alt="removeIcon"
-            />
-          </div>
-          <div className="cart-item">
-            <div
-              className="cart-item-product-img"
-              style={{ backgroundImage: "url('img/sneakers/2.jpg')" }}
-            >
-              {/* <img src="" width={70} height={70} alt="product" /> */}
-            </div>
-            <div className="cart-item-description">
-              <a href="#" className="cart-item-name">
-                Чоловічі кросівки Nike Air Max 270
-              </a>
-              <p className="cart-item-price">7 999 грн</p>
-            </div>
-            <img
-              className="remove-item-btn"
-              src="./img/icons/remove-btn.svg"
-              alt="removeIcon"
-            />
-          </div>
+          {cartItems.map((obj) => {
+            return (
+              <div className="cart-item">
+                <div
+                  className="cart-item-product-img"
+                  style={{ backgroundImage: `url(${obj.photoUrl})` }}
+                ></div>
+                <div className="cart-item-description">
+                  <a href="#" className="cart-item-name">
+                    {obj.title}
+                  </a>
+                  <p className="cart-item-price">{obj.price} грн</p>
+                </div>
+                <img 
+                  onClick={()=> deleteItem(obj)}
+                  className="remove-item-btn"
+                  src="./img/icons/remove-btn.svg"
+                  alt="removeIcon"
+                />
+              </div>
+            );
+          })}
         </div>
         <div className="drawer-bottom">
           <ul className="total-price-box">

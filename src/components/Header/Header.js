@@ -1,6 +1,6 @@
 import s from './Header.module.scss';
 
-function Header() {
+function Header(props) {
   return (
     <header className={s.header}>
       <div className={`${s.headerContainer} ${s.container}`}>
@@ -15,7 +15,7 @@ function Header() {
         </div>
         <div className={s.headerRight}>
           <ul className={s.headerRightMenu}>
-            <li>
+            <li onClick={props.onClickCart}>
               <img src="./img/icons/cart.svg" alt="cart" />
               <span>999грн</span>
             </li>
